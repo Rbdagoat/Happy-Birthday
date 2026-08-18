@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f6f5f1;
+    --surface: #ffffff;
+    --ink: #17171a;
+    --muted: #6f6a63;
+    --accent: #4b5842;
+    --line: rgba(23,23,26,0.12);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+  }
+
+  .wrap{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  nav{
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 48px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  nav a{
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  nav a:hover, nav a.current{
+    color: var(--ink);
+    border-color: var(--accent);
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5.5vw, 46px);
+    margin: 0 0 8px;
+    text-align: center;
+  }
+  h1 em{ color: var(--accent); font-style: italic; }
+
+  .subtitle{
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 auto 44px;
+    max-width: 460px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .photo{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .photo:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(23,23,26,0.08);
+  }
+
+  .photo img{
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    background: #ece9e2;
+  }
+
+  .caption{
+    padding: 12px 14px 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .instructions{
+    margin-top: 56px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .instructions code{
+    background: var(--bg);
+    padding: 2px 6px;
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a href="birthday.html">message</a>
+    <a href="gallery.html" class="current">gallery</a>
+    <a href="wall.html">photo wall</a>
+  </nav>
+
+  <h1>The <em>photo wall</em></h1>
+  <p class="subtitle">All the good moments in one place. Swap these placeholders for the real thing below.</p>
+
+  <div class="grid">
+    <div class="photo"><img src="images/photo1.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+    <div class="photo"><img src="images/photo2.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+    <div class="photo"><img src="images/photo3.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+    <div class="photo"><img src="images/photo4.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+    <div class="photo"><img src="images/photo5.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+    <div class="photo"><img src="images/photo6.jpg" alt="Add a photo here"><div class="caption">write a caption here</div></div>
+  </div>
+
+  <div class="instructions">
+    <strong style="color: var(--ink);">How to add your own photos:</strong><br>
+    1. Make a folder named <code>images</code> in the same place as this HTML file.<br>
+    2. Drop your photos in there and name them <code>photo1.jpg</code>, <code>photo2.jpg</code>, etc. (or any name — just update the <code>src</code> in the code to match).<br>
+    3. Add or remove <code>&lt;div class="photo"&gt;</code> blocks to match how many photos you have.<br>
+    4. Edit the caption text under each photo.
+  </div>
+</div>
+
+</body>
+</html>
